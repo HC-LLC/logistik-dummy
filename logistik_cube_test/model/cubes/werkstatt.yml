@@ -1,7 +1,7 @@
 cubes:
   - name: werkstatt
     sql: >
-      SELECT * FROM read_csv_auto('https://raw.githubusercontent.com/DEIN_GITHUB_NAME/logistik-daten/main/data/werkstatt.csv')
+      SELECT * FROM read_csv_auto('https://raw.githubusercontent.com/HC-LLC/logistik-dummy/main/logistik_cube_test/data/werkstatt.csv')
 
     measures:
       # Baustein für Kern-KPI 5: Fahrzeuge aktuell in der Werkstatt
