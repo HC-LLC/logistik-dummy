@@ -1,7 +1,7 @@
 cubes:
   - name: kunden
     sql: >
-      SELECT * FROM read_csv_auto('https://raw.githubusercontent.com/DEIN_GITHUB_NAME/logistik-daten/main/data/kunden.csv')
+      SELECT * FROM read_csv_auto('https://raw.githubusercontent.com/HC-LLC/logistik-dummy/main/logistik_cube_test/data/kunden.csv')
 
     dimensions:
       - name: kunde_id
