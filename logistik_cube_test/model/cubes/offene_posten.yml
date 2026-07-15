@@ -1,7 +1,7 @@
 cubes:
   - name: offene_posten
     sql: >
-      SELECT * FROM read_csv_auto('https://raw.githubusercontent.com/DEIN_GITHUB_NAME/logistik-daten/main/data/offene_posten.csv')
+      SELECT * FROM read_csv_auto('https://raw.githubusercontent.com/HC-LLC/logistik-dummy/main/logistik_cube_test/data/offene_posten.csv')
 
     joins:
       - name: kunden
