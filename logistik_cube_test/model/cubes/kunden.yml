@@ -1,0 +1,19 @@
+cubes:
+  - name: kunden
+    sql: >
+      SELECT * FROM read_csv_auto('https://raw.githubusercontent.com/DEIN_GITHUB_NAME/logistik-daten/main/data/kunden.csv')
+
+    dimensions:
+      - name: kunde_id
+        sql: kunde_id
+        type: string
+        primary_key: true
+      - name: kundenname
+        sql: kundenname
+        type: string
+      - name: branche
+        sql: branche
+        type: string
+      - name: abc_klasse
+        sql: abc_klasse
+        type: string

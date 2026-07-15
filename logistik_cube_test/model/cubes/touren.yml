@@ -1,0 +1,48 @@
+cubes:
+  - name: touren
+    sql: >
+      SELECT * FROM read_csv_auto('https://raw.githubusercontent.com/DEIN_GITHUB_NAME/logistik-daten/main/data/touren.csv')
+
+    joins:
+      - name: kunden
+        relationship: many_to_one
+        sql: "{CUBE}.kunde_id = {kunden}.kunde_id"
+      - name: fahrzeuge
+        relationship: many_to_one
+        sql: "{CUBE}.fahrzeug_id = {fahrzeuge}.fahrzeug_id"
+
+    measures:
+      # Kern-KPI 1: Umsatz/Tag (im Dashboard nach Datum gruppieren)
+      - name: umsatz_gesamt
+        title: Umsatz (netto)
+        sql: umsatz_netto_eur
+        type: sum
+        format: currency
+      # Kern-KPI 2: Gefahrene km/Tag
+      - name: km_gesamt
+        title: Gefahrene Kilometer
+        sql: km
+        type: sum
+      # Kern-KPI 3: Eingesetzte Fahrzeuge
+      - name: eingesetzte_fahrzeuge
+        title: Eingesetzte Fahrzeuge
+        sql: fahrzeug_id
+        type: count_distinct
+      - name: anzahl_touren
+        title: Anzahl Touren
+        type: count
+
+    dimensions:
+      - name: tour_id
+        sql: tour_id
+        type: string
+        primary_key: true
+      - name: datum
+        sql: "CAST(datum AS TIMESTAMP)"
+        type: time
+      - name: kunde_id
+        sql: kunde_id
+        type: string
+      - name: fahrzeug_id
+        sql: fahrzeug_id
+        type: string

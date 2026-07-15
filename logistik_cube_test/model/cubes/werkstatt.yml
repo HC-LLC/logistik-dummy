@@ -1,0 +1,34 @@
+cubes:
+  - name: werkstatt
+    sql: >
+      SELECT * FROM read_csv_auto('https://raw.githubusercontent.com/DEIN_GITHUB_NAME/logistik-daten/main/data/werkstatt.csv')
+
+    measures:
+      # Baustein für Kern-KPI 5: Fahrzeuge aktuell in der Werkstatt
+      - name: fahrzeuge_in_werkstatt_heute
+        title: Fahrzeuge heute in Werkstatt
+        sql: fahrzeug_id
+        type: count_distinct
+        filters:
+          - sql: "{CUBE}.von_datum <= CURRENT_DATE AND {CUBE}.bis_datum >= CURRENT_DATE"
+      - name: anzahl_vorgaenge
+        title: Werkstattvorgänge
+        type: count
+
+    dimensions:
+      - name: vorgang_id
+        sql: vorgang_id
+        type: string
+        primary_key: true
+      - name: fahrzeug_id
+        sql: fahrzeug_id
+        type: string
+      - name: von_datum
+        sql: "CAST(von_datum AS TIMESTAMP)"
+        type: time
+      - name: bis_datum
+        sql: "CAST(bis_datum AS TIMESTAMP)"
+        type: time
+      - name: grund
+        sql: grund
+        type: string

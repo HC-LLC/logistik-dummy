@@ -1,0 +1,23 @@
+fahrzeug_id,kennzeichen,typ,antrieb,bereich,zuladung_to
+F001,LG-TR 101,Sattelzug,Diesel,Fernverkehr,24.0
+F002,LG-TR 102,Sattelzug,Diesel,Fernverkehr,24.0
+F003,LG-TR 103,Sattelzug,Diesel,Fernverkehr,24.0
+F004,LG-TR 104,Sattelzug,Diesel,Fernverkehr,24.0
+F005,LG-TR 105,Sattelzug,Elektro,Fernverkehr,24.0
+F006,LG-TR 106,Sattelzug,Diesel,Fernverkehr,24.0
+F007,LG-TR 107,Sattelzug,Diesel,Fernverkehr,24.0
+F008,LG-TR 108,Sattelzug,Diesel,Fernverkehr,24.0
+F009,LG-TR 109,Sattelzug,Diesel,Nahverkehr,24.0
+F010,LG-TR 110,Sattelzug,Diesel,Nahverkehr,24.0
+F011,LG-TR 111,Sattelzug,Diesel,Nahverkehr,24.0
+F012,LG-TR 112,Sattelzug,Elektro,Nahverkehr,24.0
+F013,LG-TR 113,Motorwagen,Diesel,Nahverkehr,11.5
+F014,LG-TR 114,Motorwagen,Diesel,Nahverkehr,11.5
+F015,LG-TR 115,Motorwagen,Diesel,Nahverkehr,11.5
+F016,LG-TR 116,Motorwagen,Diesel,Nahverkehr,11.5
+F017,LG-TR 117,Motorwagen,Diesel,Nahverkehr,11.5
+F018,LG-TR 118,Motorwagen,Diesel,Nahverkehr,11.5
+F019,LG-TR 119,Wechselbruecke,Elektro,Nahverkehr,15.0
+F020,LG-TR 120,Wechselbruecke,Diesel,Nahverkehr,15.0
+F021,LG-TR 121,Wechselbruecke,Diesel,Nahverkehr,15.0
+F022,LG-TR 122,Wechselbruecke,Diesel,Nahverkehr,15.0

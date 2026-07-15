@@ -1,0 +1,42 @@
+views:
+  # Zentrale Sicht fürs Dashboard & den Analytics-Chat:
+  # Touren inkl. Kunden- und Fahrzeugattributen
+  - name: cockpit
+    title: Cockpit Logistik
+    cubes:
+      - join_path: touren
+        includes:
+          - umsatz_gesamt
+          - km_gesamt
+          - eingesetzte_fahrzeuge
+          - anzahl_touren
+          - datum
+      - join_path: touren.kunden
+        prefix: true
+        includes:
+          - kundenname
+          - branche
+          - abc_klasse
+      - join_path: touren.fahrzeuge
+        prefix: true
+        includes:
+          - kennzeichen
+          - antrieb
+          - bereich
+
+  # Separate Sicht für Forderungen (eigener Faktenbestand)
+  - name: forderungen
+    title: Offene Forderungen
+    cubes:
+      - join_path: offene_posten
+        includes:
+          - summe_offen
+          - anzahl_posten
+          - rechnungsdatum
+          - faelligkeitsdatum
+          - ueberfaellig
+      - join_path: offene_posten.kunden
+        prefix: true
+        includes:
+          - kundenname
+          - abc_klasse

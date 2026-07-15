@@ -1,0 +1,28 @@
+cubes:
+  - name: fahrzeuge
+    sql: >
+      SELECT * FROM read_csv_auto('https://raw.githubusercontent.com/DEIN_GITHUB_NAME/logistik-daten/main/data/fahrzeuge.csv')
+
+    measures:
+      # Basis für Kern-KPI 5: Fahrzeugverfügbarkeit
+      - name: anzahl_fahrzeuge
+        title: Fahrzeuge gesamt
+        type: count
+
+    dimensions:
+      - name: fahrzeug_id
+        sql: fahrzeug_id
+        type: string
+        primary_key: true
+      - name: kennzeichen
+        sql: kennzeichen
+        type: string
+      - name: typ
+        sql: typ
+        type: string
+      - name: antrieb
+        sql: antrieb
+        type: string
+      - name: bereich
+        sql: bereich
+        type: string

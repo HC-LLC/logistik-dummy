@@ -1,0 +1,11 @@
+kunde_id,kundenname,branche,plz,ort,abc_klasse
+K001,Brennecke Automotive GmbH,Automotive,77815,Bühl,A
+K002,Feinwerk Systeme AG,Automotive,71229,Leonberg,A
+K003,Moebelwerk Sonnberg GmbH,Moebel,72202,Horb,A
+K004,Stahlhandel Krieger KG,Stahl,75175,Pforzheim,B
+K005,Verpackungen Roth GmbH,Verpackung,72070,Tuebingen,B
+K006,Kunststofftechnik Ilg GmbH,Industrie,78056,VS-Schwenningen,B
+K007,Getraenke Hartmann GmbH,Handel,70565,Stuttgart,B
+K008,Baustoffe Wanner e.K.,Baustoffe,72250,Freudenstadt,C
+K009,Elektro Grossmann GmbH,Industrie,71034,Boeblingen,C
+K010,Papierwerke Enztal GmbH,Papier,75417,Muehlacker,C

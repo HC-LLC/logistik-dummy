@@ -1,0 +1,39 @@
+cubes:
+  - name: offene_posten
+    sql: >
+      SELECT * FROM read_csv_auto('https://raw.githubusercontent.com/DEIN_GITHUB_NAME/logistik-daten/main/data/offene_posten.csv')
+
+    joins:
+      - name: kunden
+        relationship: many_to_one
+        sql: "{CUBE}.kunde_id = {kunden}.kunde_id"
+
+    measures:
+      # Kern-KPI 4: Offene Positionen
+      - name: summe_offen
+        title: Offene Forderungen
+        sql: betrag_offen_eur
+        type: sum
+        format: currency
+      - name: anzahl_posten
+        title: Anzahl offene Posten
+        type: count
+
+    dimensions:
+      - name: beleg_nr
+        sql: beleg_nr
+        type: string
+        primary_key: true
+      - name: kunde_id
+        sql: kunde_id
+        type: string
+      - name: rechnungsdatum
+        sql: "CAST(rechnungsdatum AS TIMESTAMP)"
+        type: time
+      - name: faelligkeitsdatum
+        sql: "CAST(faelligkeitsdatum AS TIMESTAMP)"
+        type: time
+      - name: ueberfaellig
+        title: Überfällig?
+        sql: "CASE WHEN faelligkeitsdatum < CURRENT_DATE THEN 'ja' ELSE 'nein' END"
+        type: string
